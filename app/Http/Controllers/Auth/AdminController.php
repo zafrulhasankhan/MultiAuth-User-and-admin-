@@ -11,7 +11,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware(['auth:admin', 'otpAdmin']);
     }
     /**
      * show dashboard.
@@ -20,11 +20,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('auth.admin');
+        return view('auth.admin.admin');
     }
 
-    public function index2()
-    {
-        return view('auth.admin2');
-    }
+    // public function index2()
+    // {
+    //     return view('auth.admin2');
+    // }
 }
